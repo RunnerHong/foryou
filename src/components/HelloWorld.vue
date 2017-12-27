@@ -1,22 +1,41 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <hr />
+    <div>
+      <ul>
+        <li v-for="user in users">
+          {{user.firstname}} {{user.lastname}}
+        </li>
+      </ul>
+    </div>
+    <hr />
+    <div>
+      <input type="text" v-model="input_val">
+    </div>
+    <div>
+      Input Value: <span v-text="input_val"></span>
+    </div>
+    <hr />
+    <div>
+      <button class="btn btn-primary" v-on:click="counter++">You've clicked this button {{counter}} times!</button>
+    </div>
+    <hr>
+    <span v-bind:title="message">
+      Hover your mouse over me for a few seconds
+      to see my dynamically bound title!
+    </span>
+    </hr>
+    <hr>
+    <div>
+      <span v-if="seen">Now you see me</span>
+    </div>
+    </hr>
+    <hr>
+    <div>
+      <p>{{ message1 }}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
   </div>
 </template>
 
@@ -25,9 +44,24 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      users: [
+        {firstname: 'Sebastian', lastname: 'Eschweiler'},
+        {firstname: 'Bill', lastname: 'Smith'},
+        {firstname: 'John', lastname: 'Porter'}
+      ],
+      input_val: '',
+      counter: 0,
+      message: 'You loaded this page on ' + new Date().toLocaleString(),
+      seen: true,
+      message1: 'Hello Vue.js!'
+    };
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message1 = this.message1.split('').reverse().join('')
     }
-  }
+  },
 }
 </script>
 
