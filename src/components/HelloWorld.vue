@@ -55,13 +55,13 @@ export default {
       message: 'You loaded this page on ' + new Date().toLocaleString(),
       seen: true,
       message1: 'Hello Vue.js!'
-    };
+    }
   },
   methods: {
     reverseMessage: function () {
       this.message1 = this.message1.split('').reverse().join('')
     }
-  },
+  }
 }
 </script>
 

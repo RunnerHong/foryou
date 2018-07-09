@@ -15,7 +15,7 @@ export default new Router({
     {
       path: '/world',
       name: 'world',
-      component: world 
+      component: world
     }
   ]
 })
