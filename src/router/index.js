@@ -1,21 +1,22 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import world from '@/components/world'
+import VueRouter from 'vue-router'
+import AppHello from '@/components/AppHello'
+import AppWorld from '@/components/AppWorld'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+export default new VueRouter({
+  mode: 'history',
   routes: [
     {
       path: '/hello',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'AppHorld',
+      component: AppHello
     },
     {
       path: '/world',
-      name: 'world',
-      component: world
+      name: 'AppWorld',
+      component: AppWorld
     }
   ]
 })
