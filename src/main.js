@@ -12,8 +12,8 @@ Vue.use(Vuex)
 
 Vue.config.productionTip = false
 
-store.commit('increment')
-console.log(store.state.count)
+// store.commit('increment')
+// console.log(store.state.count)
 
 /* eslint-disable no-new */
 new Vue({

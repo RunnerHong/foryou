@@ -1,14 +1,28 @@
 <template>
   <div id="app">
-    <router-link id='hello' to='/hello'>hello</router-link>
-    <router-link id='world' to='/world'>world</router-link>
-    <router-view/>
+    <header>
+      <router-link id='hello' to='/hello'>hello</router-link>
+      <router-link id='world' to='/world'>world</router-link>
+    </header>
+    <CompletedTodos></CompletedTodos>
+    <GetTodo></GetTodo>
+    <CurrentTodos></CurrentTodos>
+    <router-view>
+    </router-view>
   </div>
 </template>
 
 <script>
+import GetTodo from './components/GetTodo.vue'
+import CurrentTodos from './components/CurrentTodos.vue'
+import CompletedTodos from './components/CompletedTodos.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    GetTodo,
+    CurrentTodos,
+    CompletedTodos
+  }
 }
 </script>
 
